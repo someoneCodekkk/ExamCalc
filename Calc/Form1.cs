@@ -16,5 +16,21 @@ namespace Calc
         {
             InitializeComponent();
         }
+
+        private void buttonNumber_Click(object sender, EventArgs e)
+        {
+            Button b = sender as Button;
+            //MessageBox.Show(b.Name);
+            textBoxExpression.Text += b.Text;
+        }
+
+        void ClearTextBoxExpression()
+        {
+            textBoxExpression.Clear();
+        }
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxExpression();
+        }
     }
 }
