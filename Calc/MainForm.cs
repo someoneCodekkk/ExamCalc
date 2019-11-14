@@ -15,6 +15,7 @@ namespace Calc
         public MainForm()
         {
             InitializeComponent();
+            //
         }
 
         private void buttonNumber_Click(object sender, EventArgs e)
