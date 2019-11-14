@@ -1,6 +1,6 @@
 ﻿namespace Calc
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,15 @@
         {
             this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.labelExpression = new System.Windows.Forms.Label();
-            this.textBoxExpression = new System.Windows.Forms.TextBox();
-            this.buttonNumber1 = new System.Windows.Forms.Button();
-            this.labelResult = new System.Windows.Forms.Label();
             this.textBoxResult = new System.Windows.Forms.TextBox();
+            this.labelResult = new System.Windows.Forms.Label();
             this.groupBoxEditing = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonOpenBrack = new System.Windows.Forms.Button();
             this.buttonCloseBrack = new System.Windows.Forms.Button();
-            this.buttonBackspace = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonBackspace = new System.Windows.Forms.Button();
+            this.buttonNumber1 = new System.Windows.Forms.Button();
             this.buttonNumber2 = new System.Windows.Forms.Button();
             this.buttonNumber3 = new System.Windows.Forms.Button();
             this.buttonDevide = new System.Windows.Forms.Button();
@@ -59,6 +58,7 @@
             this.buttonPlus = new System.Windows.Forms.Button();
             this.buttonMinus = new System.Windows.Forms.Button();
             this.buttonMultyplay = new System.Windows.Forms.Button();
+            this.textBoxExpression = new System.Windows.Forms.TextBox();
             this.mainTableLayoutPanel.SuspendLayout();
             this.groupBoxEditing.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -124,29 +124,16 @@
             this.labelExpression.TabIndex = 0;
             this.labelExpression.Text = "Expression:";
             // 
-            // textBoxExpression
+            // textBoxResult
             // 
-            this.textBoxExpression.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainTableLayoutPanel.SetColumnSpan(this.textBoxExpression, 5);
-            this.textBoxExpression.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxExpression.Location = new System.Drawing.Point(115, 4);
-            this.textBoxExpression.Name = "textBoxExpression";
-            this.textBoxExpression.Size = new System.Drawing.Size(554, 26);
-            this.textBoxExpression.TabIndex = 1;
-            // 
-            // buttonNumber1
-            // 
-            this.buttonNumber1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNumber1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNumber1.Location = new System.Drawing.Point(3, 143);
-            this.buttonNumber1.Name = "buttonNumber1";
-            this.buttonNumber1.Size = new System.Drawing.Size(106, 29);
-            this.buttonNumber1.TabIndex = 2;
-            this.buttonNumber1.Text = "1";
-            this.buttonNumber1.UseVisualStyleBackColor = true;
-            this.buttonNumber1.Click += new System.EventHandler(this.buttonNumber_Click);
+            this.textBoxResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainTableLayoutPanel.SetColumnSpan(this.textBoxResult, 5);
+            this.textBoxResult.Enabled = false;
+            this.textBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxResult.Location = new System.Drawing.Point(115, 39);
+            this.textBoxResult.Name = "textBoxResult";
+            this.textBoxResult.Size = new System.Drawing.Size(554, 26);
+            this.textBoxResult.TabIndex = 1;
             // 
             // labelResult
             // 
@@ -158,17 +145,6 @@
             this.labelResult.Size = new System.Drawing.Size(106, 20);
             this.labelResult.TabIndex = 0;
             this.labelResult.Text = "Result:";
-            // 
-            // textBoxResult
-            // 
-            this.textBoxResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainTableLayoutPanel.SetColumnSpan(this.textBoxResult, 5);
-            this.textBoxResult.Enabled = false;
-            this.textBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxResult.Location = new System.Drawing.Point(115, 39);
-            this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.Size = new System.Drawing.Size(554, 26);
-            this.textBoxResult.TabIndex = 1;
             // 
             // groupBoxEditing
             // 
@@ -212,10 +188,11 @@
             this.buttonOpenBrack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonOpenBrack.Location = new System.Drawing.Point(3, 3);
             this.buttonOpenBrack.Name = "buttonOpenBrack";
-            this.buttonOpenBrack.Size = new System.Drawing.Size(104, 39);
+            this.buttonOpenBrack.Size = new System.Drawing.Size(103, 39);
             this.buttonOpenBrack.TabIndex = 2;
             this.buttonOpenBrack.Text = "(";
             this.buttonOpenBrack.UseVisualStyleBackColor = true;
+            this.buttonOpenBrack.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // buttonCloseBrack
             // 
@@ -223,12 +200,27 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCloseBrack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCloseBrack.Location = new System.Drawing.Point(113, 3);
+            this.buttonCloseBrack.Location = new System.Drawing.Point(112, 3);
             this.buttonCloseBrack.Name = "buttonCloseBrack";
-            this.buttonCloseBrack.Size = new System.Drawing.Size(104, 39);
+            this.buttonCloseBrack.Size = new System.Drawing.Size(103, 39);
             this.buttonCloseBrack.TabIndex = 2;
             this.buttonCloseBrack.Text = ")";
             this.buttonCloseBrack.UseVisualStyleBackColor = true;
+            this.buttonCloseBrack.Click += new System.EventHandler(this.buttonNumber_Click);
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClear.Location = new System.Drawing.Point(548, 3);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(109, 39);
+            this.buttonClear.TabIndex = 2;
+            this.buttonClear.Text = "C";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonBackspace
             // 
@@ -237,26 +229,27 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.buttonBackspace, 2);
             this.buttonBackspace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBackspace.Location = new System.Drawing.Point(333, 3);
+            this.buttonBackspace.Location = new System.Drawing.Point(330, 3);
             this.buttonBackspace.Name = "buttonBackspace";
-            this.buttonBackspace.Size = new System.Drawing.Size(214, 39);
+            this.buttonBackspace.Size = new System.Drawing.Size(212, 39);
             this.buttonBackspace.TabIndex = 2;
             this.buttonBackspace.Text = "Backspace";
             this.buttonBackspace.UseVisualStyleBackColor = true;
+            this.buttonBackspace.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
-            // buttonClear
+            // buttonNumber1
             // 
-            this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonNumber1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClear.Location = new System.Drawing.Point(553, 3);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(104, 39);
-            this.buttonClear.TabIndex = 2;
-            this.buttonClear.Text = "C";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.buttonNumber1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNumber1.Location = new System.Drawing.Point(3, 143);
+            this.buttonNumber1.Name = "buttonNumber1";
+            this.buttonNumber1.Size = new System.Drawing.Size(106, 29);
+            this.buttonNumber1.TabIndex = 2;
+            this.buttonNumber1.Text = "1";
+            this.buttonNumber1.UseVisualStyleBackColor = true;
+            this.buttonNumber1.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // buttonNumber2
             // 
@@ -298,6 +291,7 @@
             this.buttonDevide.TabIndex = 2;
             this.buttonDevide.Text = "/";
             this.buttonDevide.UseVisualStyleBackColor = true;
+            this.buttonDevide.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // buttonMR
             // 
@@ -487,6 +481,7 @@
             this.buttonPlus.TabIndex = 2;
             this.buttonPlus.Text = "+";
             this.buttonPlus.UseVisualStyleBackColor = true;
+            this.buttonPlus.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // buttonMinus
             // 
@@ -500,6 +495,7 @@
             this.buttonMinus.TabIndex = 2;
             this.buttonMinus.Text = "-";
             this.buttonMinus.UseVisualStyleBackColor = true;
+            this.buttonMinus.Click += new System.EventHandler(this.buttonNumber_Click);
             // 
             // buttonMultyplay
             // 
@@ -513,6 +509,17 @@
             this.buttonMultyplay.TabIndex = 2;
             this.buttonMultyplay.Text = "*";
             this.buttonMultyplay.UseVisualStyleBackColor = true;
+            this.buttonMultyplay.Click += new System.EventHandler(this.buttonNumber_Click);
+            // 
+            // textBoxExpression
+            // 
+            this.textBoxExpression.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainTableLayoutPanel.SetColumnSpan(this.textBoxExpression, 5);
+            this.textBoxExpression.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxExpression.Location = new System.Drawing.Point(115, 4);
+            this.textBoxExpression.Name = "textBoxExpression";
+            this.textBoxExpression.Size = new System.Drawing.Size(554, 26);
+            this.textBoxExpression.TabIndex = 1;
             // 
             // Form1
             // 

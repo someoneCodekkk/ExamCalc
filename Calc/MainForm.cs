@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Calc
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -20,17 +20,22 @@ namespace Calc
         private void buttonNumber_Click(object sender, EventArgs e)
         {
             Button b = sender as Button;
-            //MessageBox.Show(b.Name);
-            textBoxExpression.Text += b.Text;
+            if(b.Text.Equals("Backspace"))
+            {
+                if(textBoxExpression.Text.Length > 0)
+                {
+                    textBoxExpression.Text = textBoxExpression.Text.Remove(textBoxExpression.Text.Length - 1);
+                }
+            }
+            else
+            {
+                textBoxExpression.Text += b.Text;
+            }
         }
 
-        void ClearTextBoxExpression()
-        {
-            textBoxExpression.Clear();
-        }
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            ClearTextBoxExpression();
+            textBoxExpression.Clear();
         }
     }
 }
