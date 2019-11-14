@@ -9,7 +9,7 @@ namespace UnitTestProjectCalc
         [TestMethod]
         public void TestMethod1()
         {
-
+            Assert.AreEqual(200, 200);
         }
     }
 }
