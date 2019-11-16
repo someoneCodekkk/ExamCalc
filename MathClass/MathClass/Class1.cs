@@ -47,6 +47,24 @@ namespace MathClass
 
 
         //Метод який рахує результат прикладу приймає польський вираз 
+        public static double Sum(double first, double second)
+        {
+            return first + second;
+        }
+        public static double Sub(double first, double second)
+        {
+            return first - second;
+        }
+        public static double Div(double first, double second)
+        {
+            return first / second;
+        }
+        public static double Mult(double first, double second)
+        {
+            return first / second;
+        }
+
+
         public static double Calculation(string str)
         {
 
@@ -104,14 +122,14 @@ namespace MathClass
 
                     if (nums[i].Operation == '+')
                     {
-                        nums[i - 2].SetValue(nums[i - 2].Number + nums[i - 1].Number);
+                        nums[i - 2].SetValue(Sum(nums[i - 2].Number, nums[i - 1].Number));
                         b = false;
 
 
                     }
                     if (nums[i].Operation == '-')
                     {
-                        nums[i - 2].SetValue(nums[i - 2].Number - nums[i - 1].Number);
+                        nums[i - 2].SetValue(Sub(nums[i - 2].Number, nums[i - 1].Number));
                         b = false;
 
 
@@ -119,14 +137,14 @@ namespace MathClass
                     }
                     if (nums[i].Operation == '*')
                     {
-                        nums[i - 2].SetValue(nums[i - 2].Number * nums[i - 1].Number);
+                        nums[i - 2].SetValue(Mult(nums[i - 2].Number, nums[i - 1].Number));
                         b = false;
 
 
                     }
                     if (nums[i].Operation == '/')
                     {
-                        nums[i - 2].SetValue(nums[i - 2].Number / nums[i - 1].Number);
+                        nums[i - 2].SetValue(Div(nums[i - 2].Number, nums[i - 1].Number));
                         b = false;
 
 
@@ -142,8 +160,11 @@ namespace MathClass
 
             }
 
+            //Console.WriteLine(nums[0].Number.ToString());
             return nums[0].Number;
         }
+
+
 
 
 
