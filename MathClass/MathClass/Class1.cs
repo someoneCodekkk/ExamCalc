@@ -47,6 +47,25 @@ namespace MathClass
 
 
         //Метод який рахує результат прикладу приймає польський вираз 
+        public static double Sum(double first, double second)
+        {
+            return first + second;
+        }
+        public static double Sub(double first, double second)
+        {
+            return first - second;
+        }
+        public static double Div(double first, double second)
+        {
+            return first / second;
+        }
+        public static double Mult(double first, double second)
+        {
+            return first * second;
+        }
+
+
+
         public static double Calculation(string str)
         {
 
