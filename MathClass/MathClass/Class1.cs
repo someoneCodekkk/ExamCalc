@@ -61,8 +61,9 @@ namespace MathClass
         }
         public static double Mult(double first, double second)
         {
-            return first / second;
+            return first * second;
         }
+
 
 
         public static double Calculation(string str)
